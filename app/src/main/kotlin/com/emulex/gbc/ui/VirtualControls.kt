@@ -18,7 +18,7 @@ class VirtualControls @JvmOverloads constructor(
 ) : View(context, attrs) {
 
     var gameBoy: GameBoy? = null
-    var alpha: Float = 0.6f
+    var overlayAlpha: Float = 0.6f
 
     // ── Géométrie (recalculée à chaque changement de taille) ──────────
     private var dpadCenterX = 0f; private var dpadCenterY = 0f
@@ -75,7 +75,7 @@ class VirtualControls @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         val count = canvas.saveLayerAlpha(0f, 0f, width.toFloat(), height.toFloat(),
-            (alpha * 255).toInt())
+            (overlayAlpha * 255).toInt())
 
         drawDpad(canvas)
         drawButton(canvas, aBtnX, aBtnY, btnRadius, "A", pressed[4])
