@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EmuLex GBC</string>
+    <string name="open_rom">Ouvrir une ROM</string>
+    <string name="recent_roms">ROMs récentes</string>
+    <string name="no_roms">Aucune ROM récente</string>
+    <string name="pause">Pause</string>
+    <string name="resume">Reprendre</string>
+    <string name="reset">Réinitialiser</string>
+    <string name="save_state">Sauvegarder l\'état</string>
+    <string name="load_state">Charger l\'état</string>
+    <string name="error_loading_rom">Erreur lors du chargement de la ROM</string>
+    <string name="invalid_rom">Fichier ROM invalide</string>
+</resources>

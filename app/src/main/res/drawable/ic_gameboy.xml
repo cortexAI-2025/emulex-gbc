@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    <!-- Corps principal -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M20,10 Q10,10 10,20 L10,100 Q10,110 20,110 L100,110 Q110,110 110,100 L110,20 Q110,10 100,10 Z" />
+    <!-- Écran -->
+    <path
+        android:fillColor="#1A237E"
+        android:pathData="M30,20 L90,20 L90,65 L30,65 Z" />
+    <path
+        android:fillColor="#303F9F"
+        android:pathData="M32,22 L88,22 L88,63 L32,63 Z" />
+    <!-- D-Pad -->
+    <path
+        android:fillColor="#212121"
+        android:pathData="M25,78 L35,78 L35,88 L25,88 Z" />
+    <path
+        android:fillColor="#212121"
+        android:pathData="M20,83 L40,83 L40,85 Z" />
+    <!-- Boutons A/B -->
+    <path
+        android:fillColor="#F44336"
+        android:pathData="M90,78 A5,5 0 1,0 90,78.01 Z" />
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M78,84 A5,5 0 1,0 78,84.01 Z" />
+    <!-- Start/Select -->
+    <path
+        android:fillColor="#9E9E9E"
+        android:pathData="M50,90 L58,90 L58,93 L50,93 Z" />
+    <path
+        android:fillColor="#9E9E9E"
+        android:pathData="M62,90 L70,90 L70,93 L62,93 Z" />
+</vector>

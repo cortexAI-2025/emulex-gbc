@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <!-- Rendu émulateur -->
+    <com.emulex.gbc.ui.GameSurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Contrôles virtuels superposés -->
+    <com.emulex.gbc.ui.VirtualControls
+        android:id="@+id/virtual_controls"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Bouton menu (coin haut-droite) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="8dp"
+        android:src="@android:drawable/ic_menu_more"
+        android:alpha="0.6"
+        android:contentDescription="Menu" />
+
+    <!-- Barre d'outils repliable (haut) -->
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:orientation="horizontal"
+        android:background="#CC000000"
+        android:padding="4dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_rom_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:singleLine="true"
+            android:ellipsize="end" />
+
+        <Button
+            android:id="@+id/btn_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="⏸"
+            android:textColor="@android:color/white"
+            style="?android:attr/borderlessButtonStyle" />
+
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="↺"
+            android:textColor="@android:color/white"
+            style="?android:attr/borderlessButtonStyle" />
+
+        <Button
+            android:id="@+id/btn_save_state"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="💾"
+            android:textColor="@android:color/white"
+            style="?android:attr/borderlessButtonStyle" />
+
+        <Button
+            android:id="@+id/btn_load_state"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="📂"
+            android:textColor="@android:color/white"
+            style="?android:attr/borderlessButtonStyle" />
+
+    </LinearLayout>
+
+</FrameLayout>
