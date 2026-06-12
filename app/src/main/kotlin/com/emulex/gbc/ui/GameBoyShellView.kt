@@ -324,7 +324,7 @@ class GameBoyShellView @JvmOverloads constructor(
         dpadPath.addRoundRect(cx-a, cy-l, cx+a, cy+l, a*0.25f, a*0.25f, Path.Direction.CW)
         // Horizontal
         dpadPath.addRoundRect(cx-l, cy-a, cx+l, cy+a, a*0.25f, a*0.25f, Path.Direction.CW)
-        dpadPath.fillType = Path.FillType.UNION
+        dpadPath.fillType = Path.FillType.WINDING
     }
 
     // ─────────────────────────────────────────────────────────────────

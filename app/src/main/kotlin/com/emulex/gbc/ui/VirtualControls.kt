@@ -74,8 +74,8 @@ class VirtualControls @JvmOverloads constructor(
     }
 
     override fun onDraw(canvas: Canvas) {
-        canvas.save()
-        canvas.alpha = (alpha * 255).toInt()
+        val count = canvas.saveLayerAlpha(0f, 0f, width.toFloat(), height.toFloat(),
+            (alpha * 255).toInt())
 
         drawDpad(canvas)
         drawButton(canvas, aBtnX, aBtnY, btnRadius, "A", pressed[4])
@@ -83,7 +83,7 @@ class VirtualControls @JvmOverloads constructor(
         drawSmallButton(canvas, startX, startY, smallBtnRadius, "START", pressed[6])
         drawSmallButton(canvas, selectX, selectY, smallBtnRadius, "SEL", pressed[7])
 
-        canvas.restore()
+        canvas.restoreToCount(count)
     }
 
     private fun drawDpad(canvas: Canvas) {
