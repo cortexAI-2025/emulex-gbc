@@ -52,13 +52,15 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun setupToolbar() {
-        binding.toolbar.visibility = View.GONE  // Caché par défaut, swipe pour afficher
+        binding.toolbar.visibility = View.GONE
 
         binding.btnPause.setOnClickListener { togglePause() }
         binding.btnReset.setOnClickListener { resetEmulation() }
         binding.btnSaveState.setOnClickListener { showSaveStateDialog() }
         binding.btnLoadState.setOnClickListener { showLoadStateDialog() }
-        binding.btnMenu.setOnClickListener { toggleToolbar() }
+
+        // Tap sur le bouton menu du boîtier ou sur l'écran → bascule la toolbar
+        binding.shellView.onScreenTap = { toggleToolbar() }
     }
 
     private fun toggleToolbar() {
@@ -90,8 +92,8 @@ class GameActivity : AppCompatActivity() {
 
                 withContext(Dispatchers.Main) {
                     gameBoy = gb
-                    binding.surfaceView.attachGameBoy(gb)
-                    binding.virtualControls.gameBoy = gb
+                    binding.shellView.gameBoy = gb
+                    binding.shellView.onButton = { btn, isPressed -> gb.setButton(btn, isPressed) }
                     binding.tvRomTitle.text = cartridge.title
                     startEmulation(gb)
                 }
@@ -126,9 +128,7 @@ class GameActivity : AppCompatActivity() {
                 gb.runFrame()
 
                 // Dessiner
-                withContext(Dispatchers.Main) {
-                    binding.surfaceView.drawFrame()
-                }
+                binding.shellView.updateFrame()
 
                 // Synchronisation temporelle (~60 FPS)
                 val elapsed = System.nanoTime() - frameStart

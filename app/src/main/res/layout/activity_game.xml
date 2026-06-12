@@ -5,28 +5,11 @@
     android:layout_height="match_parent"
     android:background="@android:color/black">
 
-    <!-- Rendu émulateur -->
-    <com.emulex.gbc.ui.GameSurfaceView
-        android:id="@+id/surface_view"
+    <!-- Shell GBC complet (rendu + contrôles tactiles) -->
+    <com.emulex.gbc.ui.GameBoyShellView
+        android:id="@+id/shell_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
-    <!-- Contrôles virtuels superposés -->
-    <com.emulex.gbc.ui.VirtualControls
-        android:id="@+id/virtual_controls"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <!-- Bouton menu (coin haut-droite) -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btn_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:layout_margin="8dp"
-        android:src="@android:drawable/ic_menu_more"
-        android:alpha="0.6"
-        android:contentDescription="Menu" />
 
     <!-- Barre d'outils repliable (haut) -->
     <LinearLayout
